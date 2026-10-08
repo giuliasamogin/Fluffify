@@ -1,0 +1,2233 @@
+<!-- ==========================================================
+     FLUFFIFY — INTRODUÇÃO ANIMADA
+     Cole logo depois de <body>
+     ========================================================== -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffify - Mundo dos Filhotes</title>
+
+    <!-- Ícone na aba do navegador -->
+    <link rel="icon" type="image/x-icon" href="img/icone.ico">
+
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Biblioteca externa que fornece os ícones prontos usados em todo o site (pata, casinha, carrinho etc.) -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Arquivo próprio de CSS: cores, espaçamentos, layout de todo o site. -->
+</head>
+
+<!-- ============================================================
+     FLUFFIFY — INTRODUÇÃO ANIMADA
+     Versão: gatinho fofo + aproximação + blur
+     
+     COLE LOGO DEPOIS DE <body>
+     Não precisa apagar o restante do seu site.
+     ============================================================ -->
+
+<style>
+
+/* ============================================================
+   TELA PRINCIPAL DA INTRO
+   ============================================================ */
+
+#fluffifyIntro {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 999999;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #fffaf7 0%,
+            #f5e9e7 42%,
+            #d8c5ce 100%
+        );
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    transition:
+        opacity 1.1s cubic-bezier(.4,0,.2,1);
+
+    pointer-events: all;
+}
+
+
+/* ============================================================
+   LUZ CENTRAL
+   ============================================================ */
+
+#fluffifyIntro .luz-central {
+    position: absolute;
+
+    width: 75vmax;
+    height: 75vmax;
+
+    left: 50%;
+    top: 40%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,239,235,.65) 30%,
+            rgba(236,215,220,.25) 55%,
+            transparent 72%
+        );
+
+    filter: blur(8px);
+}
+
+
+/* ============================================================
+   NUVENS
+   ============================================================ */
+
+#fluffifyIntro .nuvem {
+    position: absolute;
+
+    width: 175px;
+    height: 48px;
+
+    background:
+        rgba(255,255,255,.62);
+
+    border-radius: 100px;
+
+    filter: blur(.5px);
+
+    opacity: .75;
+}
+
+#fluffifyIntro .nuvem::before,
+#fluffifyIntro .nuvem::after {
+    content: "";
+
+    position: absolute;
+
+    background: inherit;
+
+    border-radius: 50%;
+}
+
+#fluffifyIntro .nuvem::before {
+    width: 78px;
+    height: 78px;
+
+    left: 25px;
+    bottom: 0;
+}
+
+#fluffifyIntro .nuvem::after {
+    width: 58px;
+    height: 58px;
+
+    right: 25px;
+    bottom: 0;
+}
+
+#fluffifyIntro .nuvem1 {
+    top: 17%;
+    left: -230px;
+}
+
+#fluffifyIntro .nuvem2 {
+    top: 30%;
+    right: -230px;
+
+    transform: scale(.75);
+}
+
+
+/* ============================================================
+   PEQUENOS BRILHOS
+   ============================================================ */
+
+#fluffifyIntro .estrela {
+    position: absolute;
+
+    color: #a77f8c;
+
+    opacity: .45;
+
+    font-size: 17px;
+
+    animation:
+        brilhoEstrela 3s ease-in-out infinite;
+}
+
+#fluffifyIntro .estrela1 {
+    top: 21%;
+    left: 19%;
+}
+
+#fluffifyIntro .estrela2 {
+    top: 28%;
+    right: 22%;
+
+    font-size: 13px;
+
+    animation-delay: .8s;
+}
+
+#fluffifyIntro .estrela3 {
+    top: 45%;
+    left: 13%;
+
+    font-size: 10px;
+
+    animation-delay: 1.4s;
+}
+
+@keyframes brilhoEstrela {
+
+    0%, 100% {
+        opacity: .2;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: .8;
+        transform: scale(1.18);
+    }
+
+}
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+#fluffifyIntro .logo {
+    position: absolute;
+
+    top: 9%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    z-index: 20;
+
+    opacity: 0;
+
+    animation:
+        aparecerLogo 1.2s ease forwards;
+}
+
+#fluffifyIntro .logo-pequeno {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #967d86;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+#fluffifyIntro .logo-grande {
+
+    color: #4e4148;
+
+    font-size:
+        clamp(42px, 6vw, 72px);
+
+    font-weight: normal;
+
+    letter-spacing: -2px;
+
+    text-shadow:
+        0 4px 20px rgba(90,65,75,.12);
+}
+
+#fluffifyIntro .logo-brilho {
+
+    color: #b98591;
+
+    font-size: 14px;
+
+    margin-top: 8px;
+}
+
+@keyframes aparecerLogo {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+
+}
+
+
+/* ============================================================
+   CHÃO
+   ============================================================ */
+
+#fluffifyIntro .chao {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 23vh;
+
+    min-height: 130px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #e4d5d1,
+            #cbb9b8
+        );
+
+    border-top:
+        1px solid rgba(80,60,65,.10);
+
+    box-shadow:
+        inset 0 18px 35px rgba(255,255,255,.25);
+}
+
+#fluffifyIntro .luz-chao {
+
+    position: absolute;
+
+    top: -70px;
+
+    left: 50%;
+
+    width: 65%;
+    height: 130px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,255,255,.85),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+}
+
+
+/* ============================================================
+   GATINHO — CONTAINER
+   ============================================================ */
+
+#fluffifyIntro .gatinho {
+
+    position: absolute;
+
+    width: 230px;
+    height: 275px;
+
+    left: -280px;
+    bottom: 20vh;
+
+    z-index: 50;
+
+    transform-origin:
+        50% 100%;
+
+}
+
+
+/* ============================================================
+   SOMBRA DO GATO
+   ============================================================ */
+
+#fluffifyIntro .sombra-gato {
+
+    position: absolute;
+
+    left: 20px;
+    bottom: -9px;
+
+    width: 190px;
+    height: 30px;
+
+    background:
+        rgba(55,42,47,.22);
+
+    border-radius: 50%;
+
+    filter: blur(9px);
+
+    transform-origin: center;
+}
+
+
+/* ============================================================
+   RABO
+   ============================================================ */
+
+#fluffifyIntro .rabo {
+
+    position: absolute;
+
+    left: -30px;
+    bottom: 65px;
+
+    width: 105px;
+    height: 72px;
+
+    border:
+        23px solid #d9d1d2;
+
+    border-right: 0;
+    border-bottom-color: transparent;
+
+    border-radius:
+        70% 0 0 70%;
+
+    transform:
+        rotate(-8deg);
+
+    transform-origin:
+        right center;
+
+    filter:
+        drop-shadow(
+            3px 5px 5px
+            rgba(50,40,45,.15)
+        );
+
+    z-index: 1;
+}
+
+
+/* ============================================================
+   CORPO
+   ============================================================ */
+
+#fluffifyIntro .corpo {
+
+    position: absolute;
+
+    left: 42px;
+    bottom: 20px;
+
+    width: 150px;
+    height: 165px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f9f7f5 0%,
+            #e4dfe0 55%,
+            #cfc8ca 100%
+        );
+
+    border-radius:
+        52% 52%
+        43% 43%;
+
+    box-shadow:
+
+        inset
+        -18px -20px 28px
+        rgba(70,55,60,.16),
+
+        inset
+        10px 8px 15px
+        rgba(255,255,255,.75),
+
+        8px 16px 28px
+        rgba(55,45,50,.18);
+
+    z-index: 5;
+
+    transform-origin:
+        bottom center;
+}
+
+
+/* ============================================================
+   BARRIGA
+   ============================================================ */
+
+#fluffifyIntro .barriga {
+
+    position: absolute;
+
+    left: 38px;
+    bottom: 7px;
+
+    width: 75px;
+    height: 105px;
+
+    background:
+        rgba(255,255,255,.45);
+
+    border-radius: 50%;
+
+    filter: blur(1px);
+}
+
+
+/* ============================================================
+   CABEÇA
+   ============================================================ */
+
+#fluffifyIntro .cabeca {
+
+    position: absolute;
+
+    left: 22px;
+    top: 5px;
+
+    width: 185px;
+    height: 158px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #eee9e8 60%,
+            #d3ccce 100%
+        );
+
+    border-radius:
+        48% 48%
+        45% 45%;
+
+    box-shadow:
+
+        inset
+        -17px -18px 28px
+        rgba(65,50,55,.15),
+
+        inset
+        12px 9px 18px
+        rgba(255,255,255,.85),
+
+        8px 12px 25px
+        rgba(50,40,45,.16);
+
+    z-index: 10;
+
+    transform-origin:
+        50% 85%;
+}
+
+
+/* ============================================================
+   ORELHAS
+   ============================================================ */
+
+#fluffifyIntro .orelha {
+
+    position: absolute;
+
+    top: -43px;
+
+    width: 72px;
+    height: 74px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #faf8f7,
+            #d8d1d2
+        );
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 100%,
+            0% 100%
+        );
+
+    filter:
+        drop-shadow(
+            4px 5px 4px
+            rgba(55,45,50,.13)
+        );
+}
+
+#fluffifyIntro .orelha.esquerda {
+
+    left: 12px;
+
+    transform:
+        rotate(-9deg);
+}
+
+#fluffifyIntro .orelha.direita {
+
+    right: 12px;
+
+    transform:
+        rotate(9deg);
+}
+
+#fluffifyIntro .parte-rosa {
+
+    position: absolute;
+
+    left: 15px;
+    top: 12px;
+
+    width: 42px;
+    height: 48px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c98e9b,
+            #e0afb7
+        );
+
+    opacity: .85;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            100% 100%,
+            0% 100%
+        );
+}
+
+
+/* ============================================================
+   OLHOS
+   ============================================================ */
+
+#fluffifyIntro .olhos {
+
+    position: absolute;
+
+    left: 0;
+    top: 57px;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        0 39px;
+
+    box-sizing:
+        border-box;
+}
+
+#fluffifyIntro .olho {
+
+    width: 22px;
+    height: 29px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #5d6870,
+            #252d33
+        );
+
+    border-radius: 50%;
+
+    position: relative;
+
+    transform-origin: center;
+
+    box-shadow:
+        inset
+        2px 3px 4px
+        rgba(255,255,255,.22),
+
+        0 2px 4px
+        rgba(30,25,30,.2);
+}
+
+#fluffifyIntro .brilho-olho {
+
+    position: absolute;
+
+    top: 5px;
+    left: 5px;
+
+    width: 7px;
+    height: 7px;
+
+    background:
+        white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        4px 4px 0
+        rgba(255,255,255,.22);
+}
+
+
+/* ============================================================
+   BOCHECHAS
+   ============================================================ */
+
+#fluffifyIntro .bochecha {
+
+    position: absolute;
+
+    top: 86px;
+
+    width: 27px;
+    height: 13px;
+
+    background:
+        #d78f9e;
+
+    border-radius: 50%;
+
+    opacity: .5;
+
+    filter: blur(1px);
+}
+
+#fluffifyIntro .bochecha.esquerda {
+    left: 20px;
+}
+
+#fluffifyIntro .bochecha.direita {
+    right: 20px;
+}
+
+
+/* ============================================================
+   FOCINHO
+   ============================================================ */
+
+#fluffifyIntro .focinho {
+
+    position: absolute;
+
+    left: 50%;
+    top: 80px;
+
+    width: 50px;
+    height: 50px;
+
+    transform:
+        translateX(-50%);
+}
+
+#fluffifyIntro .nariz {
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 14px;
+    height: 10px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        #9d6672;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset
+        2px 2px 2px
+        rgba(255,255,255,.35);
+}
+
+#fluffifyIntro .boca {
+
+    position: absolute;
+
+    left: 50%;
+    top: 9px;
+
+    width: 22px;
+    height: 18px;
+
+    transform:
+        translateX(-50%);
+}
+
+#fluffifyIntro .boca::before,
+#fluffifyIntro .boca::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 11px;
+    height: 12px;
+
+    border-bottom:
+        2px solid #756269;
+
+    border-radius: 50%;
+}
+
+#fluffifyIntro .boca::before {
+
+    right: 50%;
+
+    transform:
+        rotate(8deg);
+}
+
+#fluffifyIntro .boca::after {
+
+    left: 50%;
+
+    transform:
+        rotate(-8deg);
+}
+
+
+/* ============================================================
+   BIGODES
+   ============================================================ */
+
+#fluffifyIntro .bigodes {
+
+    position: absolute;
+
+    top: 93px;
+
+    width: 55px;
+    height: 40px;
+}
+
+#fluffifyIntro .bigodes.esquerda {
+    left: -43px;
+}
+
+#fluffifyIntro .bigodes.direita {
+    right: -43px;
+}
+
+#fluffifyIntro .bigodes span {
+
+    position: absolute;
+
+    width: 55px;
+    height: 1px;
+
+    background:
+        rgba(75,65,70,.32);
+}
+
+#fluffifyIntro .bigodes.esquerda span:nth-child(1) {
+    top: 3px;
+    transform: rotate(8deg);
+}
+
+#fluffifyIntro .bigodes.esquerda span:nth-child(2) {
+    top: 17px;
+}
+
+#fluffifyIntro .bigodes.esquerda span:nth-child(3) {
+    top: 30px;
+    transform: rotate(-10deg);
+}
+
+#fluffifyIntro .bigodes.direita span:nth-child(1) {
+    top: 3px;
+    transform: rotate(-8deg);
+}
+
+#fluffifyIntro .bigodes.direita span:nth-child(2) {
+    top: 17px;
+}
+
+#fluffifyIntro .bigodes.direita span:nth-child(3) {
+    top: 30px;
+    transform: rotate(10deg);
+}
+
+
+/* ============================================================
+   PATINHAS
+   ============================================================ */
+
+#fluffifyIntro .pata {
+
+    position: absolute;
+
+    width: 48px;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8f6f5,
+            #d7d0d1
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        inset
+        5px 4px 6px
+        rgba(255,255,255,.65),
+
+        0 5px 8px
+        rgba(50,40,45,.13);
+
+    z-index: 15;
+}
+
+#fluffifyIntro .pata-esquerda {
+    left: 14px;
+    bottom: -8px;
+}
+
+#fluffifyIntro .pata-direita {
+    right: 14px;
+    bottom: -8px;
+}
+
+
+/* ============================================================
+   MENSAGEM
+   ============================================================ */
+
+#fluffifyIntro .mensagem {
+
+    position: absolute;
+
+    left: 50%;
+    top: 25%;
+
+    transform:
+        translateX(-50%);
+
+    text-align: center;
+
+    opacity: 0;
+
+    z-index: 25;
+
+    color:
+        #66565e;
+
+    pointer-events: none;
+}
+
+#fluffifyIntro .mensagem-pequena {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 4px;
+
+    color:
+        #a18990;
+}
+
+#fluffifyIntro .mensagem-grande {
+
+    font-size:
+        clamp(22px, 3vw, 35px);
+
+    font-style: italic;
+
+    font-weight: normal;
+}
+
+
+/* ============================================================
+   BLUR DA TRANSIÇÃO
+   ============================================================ */
+
+#fluffifyIntro .efeito-lambida {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 500;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background:
+        rgba(255,248,248,.12);
+
+    backdrop-filter:
+        blur(0px);
+
+    -webkit-backdrop-filter:
+        blur(0px);
+}
+
+
+/* ============================================================
+   BRILHO FINAL
+   ============================================================ */
+
+#fluffifyIntro .brilho-final {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background:
+        #fffaf9;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   CELULAR
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    #fluffifyIntro .gatinho {
+
+        transform:
+            scale(.75);
+
+        transform-origin:
+            bottom center;
+    }
+
+    #fluffifyIntro .logo {
+        top: 8%;
+    }
+
+    #fluffifyIntro .mensagem {
+        top: 23%;
+    }
+
+}
+
+</style>
+
+
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+
+<div id="fluffifyIntro">
+
+
+    <!-- LUZ -->
+
+    <div class="luz-central"></div>
+
+
+    <!-- NUVENS -->
+
+    <div class="nuvem nuvem1"></div>
+    <div class="nuvem nuvem2"></div>
+
+
+    <!-- ESTRELAS -->
+
+    <div class="estrela estrela1">✦</div>
+    <div class="estrela estrela2">✧</div>
+    <div class="estrela estrela3">✦</div>
+
+
+    <!-- ========================================================
+         LOGO
+         ======================================================== -->
+
+    <div class="logo">
+
+        <span class="logo-pequeno">
+            bem-vindo ao
+        </span>
+
+        <div class="logo-grande">
+            Fluffify
+        </div>
+
+        <div class="logo-brilho">
+            ✦
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         CHÃO
+         ======================================================== -->
+
+    <div class="chao">
+
+        <div class="luz-chao"></div>
+
+    </div>
+
+
+    <!-- ========================================================
+         GATINHO
+         ======================================================== -->
+
+    <div
+        class="gatinho"
+        id="gato">
+
+
+        <!-- SOMBRA -->
+
+        <div
+            class="sombra-gato"
+            id="sombraGato">
+        </div>
+
+
+        <!-- RABO -->
+
+        <div
+            class="rabo"
+            id="raboGato">
+        </div>
+
+
+        <!-- CORPO -->
+
+        <div class="corpo">
+
+            <div class="barriga"></div>
+
+            <div class="pata pata-esquerda"></div>
+
+            <div class="pata pata-direita"></div>
+
+        </div>
+
+
+        <!-- CABEÇA -->
+
+        <div
+            class="cabeca"
+            id="cabecaGato">
+
+
+            <!-- ORELHA ESQUERDA -->
+
+            <div class="orelha esquerda">
+
+                <div class="parte-rosa"></div>
+
+            </div>
+
+
+            <!-- ORELHA DIREITA -->
+
+            <div class="orelha direita">
+
+                <div class="parte-rosa"></div>
+
+            </div>
+
+
+            <!-- OLHOS -->
+
+            <div class="olhos">
+
+                <div
+                    class="olho"
+                    id="olhoEsquerdo">
+
+                    <div class="brilho-olho"></div>
+
+                </div>
+
+
+                <div
+                    class="olho"
+                    id="olhoDireito">
+
+                    <div class="brilho-olho"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOCHECHAS -->
+
+            <div class="bochecha esquerda"></div>
+
+            <div class="bochecha direita"></div>
+
+
+            <!-- FOCINHO -->
+
+            <div class="focinho">
+
+                <div class="nariz"></div>
+
+                <div class="boca"></div>
+
+            </div>
+
+
+            <!-- BIGODES -->
+
+            <div class="bigodes esquerda">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <div class="bigodes direita">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         MENSAGEM
+         ======================================================== -->
+
+    <div
+        class="mensagem"
+        id="mensagem">
+
+        <span class="mensagem-pequena">
+            um pouquinho de fofura
+        </span>
+
+        <div class="mensagem-grande">
+            está chegando...
+        </div>
+
+    </div>
+
+
+    <!-- ========================================================
+         BLUR FINAL
+         ======================================================== -->
+
+    <div
+        class="efeito-lambida"
+        id="efeitoLambida">
+    </div>
+
+
+    <!-- BRILHO -->
+
+    <div
+        class="brilho-final"
+        id="brilhoFinal">
+    </div>
+
+</div>
+
+
+<script>
+
+(function () {
+
+
+    /* ========================================================
+       ELEMENTOS
+       ======================================================== */
+
+    const intro =
+        document.getElementById(
+            "fluffifyIntro"
+        );
+
+    const gato =
+        document.getElementById(
+            "gato"
+        );
+
+    const cabeca =
+        document.getElementById(
+            "cabecaGato"
+        );
+
+    const rabo =
+        document.getElementById(
+            "raboGato"
+        );
+
+    const sombra =
+        document.getElementById(
+            "sombraGato"
+        );
+
+    const olhoEsquerdo =
+        document.getElementById(
+            "olhoEsquerdo"
+        );
+
+    const olhoDireito =
+        document.getElementById(
+            "olhoDireito"
+        );
+
+    const mensagem =
+        document.getElementById(
+            "mensagem"
+        );
+
+    const efeito =
+        document.getElementById(
+            "efeitoLambida"
+        );
+
+    const brilho =
+        document.getElementById(
+            "brilhoFinal"
+        );
+
+
+    /* ========================================================
+       ESPERA
+       ======================================================== */
+
+    function esperar(ms) {
+
+        return new Promise(
+            resolve =>
+                setTimeout(resolve, ms)
+        );
+
+    }
+
+
+    /* ========================================================
+       PISCAR
+       ======================================================== */
+
+    async function piscar() {
+
+        const olhos = [
+            olhoEsquerdo,
+            olhoDireito
+        ];
+
+        olhos.forEach(olho => {
+
+            olho.animate(
+
+                [
+                    {
+                        transform:
+                            "scaleY(1)"
+                    },
+
+                    {
+                        transform:
+                            "scaleY(.08)"
+                    },
+
+                    {
+                        transform:
+                            "scaleY(1)"
+                    }
+                ],
+
+                {
+                    duration: 260,
+
+                    fill: "forwards",
+
+                    easing:
+                        "ease-in-out"
+                }
+
+            );
+
+        });
+
+        await esperar(260);
+
+    }
+
+
+    /* ========================================================
+       NUVENS
+       ======================================================== */
+
+    const nuvem1 =
+        document.querySelector(
+            "#fluffifyIntro .nuvem1"
+        );
+
+    const nuvem2 =
+        document.querySelector(
+            "#fluffifyIntro .nuvem2"
+        );
+
+
+    nuvem1.animate(
+
+        [
+            {
+                transform:
+                    "translateX(0)"
+            },
+
+            {
+                transform:
+                    "translateX(calc(100vw + 500px))"
+            }
+        ],
+
+        {
+            duration: 30000,
+
+            iterations:
+                Infinity
+        }
+
+    );
+
+
+    nuvem2.animate(
+
+        [
+            {
+                transform:
+                    "translateX(0) scale(.75)"
+            },
+
+            {
+                transform:
+                    "translateX(calc(-100vw - 500px)) scale(.75)"
+            }
+        ],
+
+        {
+            duration: 38000,
+
+            iterations:
+                Infinity
+        }
+
+    );
+
+
+    /* ========================================================
+       ANIMAÇÃO PRINCIPAL
+       ======================================================== */
+
+    async function iniciarAnimacao() {
+
+
+        /* ----------------------------------------------------
+           POSIÇÃO
+           ---------------------------------------------------- */
+
+        const centro =
+            window.innerWidth / 2 - 115;
+
+
+        gato.style.left =
+            "-280px";
+
+
+        await esperar(900);
+
+
+        /* ----------------------------------------------------
+           ENTRADA DO GATO
+           ---------------------------------------------------- */
+
+        gato.animate(
+
+            [
+
+                {
+                    left: "-280px",
+
+                    transform:
+                        "translateY(0) rotate(0)"
+                },
+
+                {
+                    left:
+                        (centro - 30) + "px",
+
+                    transform:
+                        "translateY(-10px) rotate(-1deg)"
+                },
+
+                {
+                    left:
+                        centro + "px",
+
+                    transform:
+                        "translateY(0) rotate(0)"
+                }
+
+            ],
+
+            {
+
+                duration: 3500,
+
+                easing:
+                    "cubic-bezier(.22,.61,.36,1)",
+
+                fill:
+                    "forwards"
+            }
+
+        );
+
+
+        /* ----------------------------------------------------
+           RABO DURANTE A CAMINHADA
+           ---------------------------------------------------- */
+
+        rabo.animate(
+
+            [
+
+                {
+                    transform:
+                        "rotate(-8deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(15deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(-2deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(12deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(-8deg)"
+                }
+
+            ],
+
+            {
+
+                duration: 720,
+
+                iterations: 5,
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        /* ----------------------------------------------------
+           PEQUENO BALANÇO DO CORPO
+           ---------------------------------------------------- */
+
+        gato.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) rotate(0)"
+                },
+
+                {
+                    transform:
+                        "translateY(-5px) rotate(-1deg)"
+                },
+
+                {
+                    transform:
+                        "translateY(0) rotate(1deg)"
+                },
+
+                {
+                    transform:
+                        "translateY(-4px) rotate(0)"
+                },
+
+                {
+                    transform:
+                        "translateY(0) rotate(0)"
+                }
+
+            ],
+
+            {
+
+                duration: 800,
+
+                iterations: 4,
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(3500);
+
+
+        /* ----------------------------------------------------
+           PARADA FOFA
+           ---------------------------------------------------- */
+
+        gato.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) scale(1)"
+                },
+
+                {
+                    transform:
+                        "translateY(8px) scaleY(.93) scaleX(1.04)"
+                },
+
+                {
+                    transform:
+                        "translateY(4px) scaleY(.97) scaleX(1.02)"
+                },
+
+                {
+                    transform:
+                        "translateY(0) scale(1)"
+                }
+
+            ],
+
+            {
+
+                duration: 750,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "cubic-bezier(.34,1.56,.64,1)"
+            }
+
+        );
+
+
+        sombra.animate(
+
+            [
+
+                {
+                    transform:
+                        "scaleX(1)"
+                },
+
+                {
+                    transform:
+                        "scaleX(1.18)"
+                },
+
+                {
+                    transform:
+                        "scaleX(1.05)"
+                }
+
+            ],
+
+            {
+
+                duration: 750,
+
+                fill:
+                    "forwards"
+            }
+
+        );
+
+
+        await esperar(800);
+
+
+        /* ----------------------------------------------------
+           OLHA PARA UM LADO
+           ---------------------------------------------------- */
+
+        cabeca.animate(
+
+            [
+
+                {
+                    transform:
+                        "rotate(0)"
+                },
+
+                {
+                    transform:
+                        "rotate(-7deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(5deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(0)"
+                }
+
+            ],
+
+            {
+
+                duration: 1300,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(700);
+
+
+        /* ----------------------------------------------------
+           PISCADA
+           ---------------------------------------------------- */
+
+        await piscar();
+
+
+        await esperar(500);
+
+
+        /* ----------------------------------------------------
+           CABEÇA INCLINA
+           ---------------------------------------------------- */
+
+        cabeca.animate(
+
+            [
+
+                {
+                    transform:
+                        "rotate(0)"
+                },
+
+                {
+                    transform:
+                        "rotate(-8deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(4deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(0)"
+                }
+
+            ],
+
+            {
+
+                duration: 1000,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        /* ----------------------------------------------------
+           RABO FOFO
+           ---------------------------------------------------- */
+
+        rabo.animate(
+
+            [
+
+                {
+                    transform:
+                        "rotate(-8deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(17deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(-4deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(12deg)"
+                },
+
+                {
+                    transform:
+                        "rotate(-8deg)"
+                }
+
+            ],
+
+            {
+
+                duration: 1000,
+
+                iterations: 2,
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(1200);
+
+
+        /* ----------------------------------------------------
+           MENSAGEM APARECE
+           ---------------------------------------------------- */
+
+        mensagem.animate(
+
+            [
+
+                {
+                    opacity: 0,
+
+                    transform:
+                        "translateX(-50%) translateY(15px)"
+                },
+
+                {
+                    opacity: 1,
+
+                    transform:
+                        "translateX(-50%) translateY(0)"
+                }
+
+            ],
+
+            {
+
+                duration: 800,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "ease-out"
+            }
+
+        );
+
+
+        await esperar(1000);
+
+
+        /* ----------------------------------------------------
+           RESPIRAÇÃO DO GATO
+           ---------------------------------------------------- */
+
+        gato.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) scale(1)"
+                },
+
+                {
+                    transform:
+                        "translateY(-2px) scale(1.015)"
+                },
+
+                {
+                    transform:
+                        "translateY(0) scale(1)"
+                }
+
+            ],
+
+            {
+
+                duration: 1800,
+
+                iterations: 2,
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(2200);
+
+
+        /* ----------------------------------------------------
+           SEGUNDA PISCADA
+           ---------------------------------------------------- */
+
+        await piscar();
+
+
+        await esperar(700);
+
+
+        /* ----------------------------------------------------
+           OLHA DIRETAMENTE PARA A TELA
+           ---------------------------------------------------- */
+
+        cabeca.animate(
+
+            [
+
+                {
+                    transform:
+                        "rotate(0) scale(1)"
+                },
+
+                {
+                    transform:
+                        "rotate(-2deg) scale(1.03)"
+                },
+
+                {
+                    transform:
+                        "rotate(0) scale(1)"
+                }
+
+            ],
+
+            {
+
+                duration: 800,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(700);
+
+
+        /* ----------------------------------------------------
+           TEXTO SOME
+           ---------------------------------------------------- */
+
+        mensagem.animate(
+
+            [
+
+                {
+                    opacity: 1,
+
+                    transform:
+                        "translateX(-50%) translateY(0)"
+                },
+
+                {
+                    opacity: 0,
+
+                    transform:
+                        "translateX(-50%) translateY(-15px)"
+                }
+
+            ],
+
+            {
+
+                duration: 500,
+
+                fill:
+                    "forwards"
+            }
+
+        );
+
+
+        await esperar(400);
+
+
+        /* ====================================================
+           APROXIMAÇÃO DO GATO
+           ==================================================== */
+
+        gato.animate(
+
+            [
+
+                {
+                    transform:
+                        "translateY(0) scale(1)"
+                },
+
+                {
+                    transform:
+                        "translateY(8px) scale(1.5)"
+                },
+
+                {
+                    transform:
+                        "translateY(25px) scale(2.6)"
+                },
+
+                {
+                    transform:
+                        "translateY(50px) scale(4.5)"
+                },
+
+                {
+                    transform:
+                        "translateY(75px) scale(7)"
+                }
+
+            ],
+
+            {
+
+                duration: 3000,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "cubic-bezier(.55,0,1,.45)"
+            }
+
+        );
+
+
+        await esperar(1900);
+
+
+        /* ====================================================
+           BLUR COMEÇA ENQUANTO ELE SE APROXIMA
+           ==================================================== */
+
+        efeito.animate(
+
+            [
+
+                {
+                    opacity: 0,
+
+                    backdropFilter:
+                        "blur(0px)",
+
+                    webkitBackdropFilter:
+                        "blur(0px)"
+                },
+
+                {
+                    opacity: .35,
+
+                    backdropFilter:
+                        "blur(2px)",
+
+                    webkitBackdropFilter:
+                        "blur(2px)"
+                },
+
+                {
+                    opacity: .72,
+
+                    backdropFilter:
+                        "blur(7px)",
+
+                    webkitBackdropFilter:
+                        "blur(7px)"
+                },
+
+                {
+                    opacity: 1,
+
+                    backdropFilter:
+                        "blur(16px)",
+
+                    webkitBackdropFilter:
+                        "blur(16px)"
+                }
+
+            ],
+
+            {
+
+                duration: 1700,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(1500);
+
+
+        /* ====================================================
+           BRILHO DE TRANSIÇÃO
+           ==================================================== */
+
+        brilho.animate(
+
+            [
+
+                {
+                    opacity: 0
+                },
+
+                {
+                    opacity: .35
+                },
+
+                {
+                    opacity: 1
+                }
+
+            ],
+
+            {
+
+                duration: 850,
+
+                fill:
+                    "forwards",
+
+                easing:
+                    "ease-in-out"
+            }
+
+        );
+
+
+        await esperar(750);
+
+
+        /* ====================================================
+           INTRO SOME
+           ==================================================== */
+
+        intro.style.opacity =
+            "0";
+
+
+        await esperar(1100);
+
+
+        /* ====================================================
+           REMOVE A INTRO
+           ==================================================== */
+
+        intro.remove();
+
+    }
+
+
+    /* ========================================================
+       INICIAR
+       ======================================================== */
+
+    iniciarAnimacao();
+
+
+})();
+
+</script>
