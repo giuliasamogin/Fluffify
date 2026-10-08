@@ -298,11 +298,13 @@ main {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 40px;
+    padding: 25px 40px 40px;
     margin-bottom: 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
-/* Repare que aqui o seletor é "#inicio" (com #), não ".inicio" (com
+/* [AJUSTADO] O padding de cima foi reduzido (25px em vez de 40px) para o
+   banner subir. A ordem dos valores é: cima, lados, baixo.
+   Repare que aqui o seletor é "#inicio" (com #), não ".inicio" (com
    ponto): # é usado pra estilizar um id específico (só existe UM
    elemento com esse id na página), enquanto . (ponto) é usado pra
    classes (que podem se repetir em vários elementos). */
@@ -325,20 +327,23 @@ main {
     position: relative;
     width: 100%;
     max-width: 1000px;
-    aspect-ratio: 1376 / 768;
-    margin: 25px auto;
+    aspect-ratio: 1376 / 700;
+    margin: 0 auto 25px auto;
     overflow: hidden;
     border-radius: 12px;
     background-color: #f0eae1;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
-/* position: relative é essencial aqui: ele faz esse elemento virar a
+/* [AJUSTADO] aspect-ratio 1376 / 700: banner um pouco mais baixo que antes
+   (era 768). margin: 0 em cima cola o banner no topo do cartão; 25px só
+   embaixo dá respiro até o título de boas-vindas.
+   position: relative é essencial aqui: ele faz esse elemento virar a
    "referência de posição" pros filhos que usam position: absolute (os
    slides do carrossel, logo abaixo) — sem isso, o absolute dos filhos
    se basearia na página inteira, não nesse container.
-   aspect-ratio: 1376 / 768 trava a proporção largura/altura do banner
-   (a mesma proporção das suas imagens), então ele muda de altura
-   automaticamente conforme a largura da tela, sem distorcer.
+   aspect-ratio trava a proporção largura/altura do banner, então ele
+   muda de altura automaticamente conforme a largura da tela, sem
+   distorcer.
    overflow: hidden "corta" qualquer coisa que ultrapasse os limites
    dessa caixa — junto com o border-radius, garante que as imagens
    fiquem com cantos arredondados mesmo se a imagem original for
