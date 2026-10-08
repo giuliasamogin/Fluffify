@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+
+<title>Fluffify — Mundo dos Filhotes</title>
+
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<div class="intro" id="fluffifyIntro">
+
+    <button class="skip-intro" id="skipIntro">
+        Pular intro
+    </button>
+
+    <div class="intro-light"></div>
+
+    <div class="cloud one"></div>
+    <div class="cloud two"></div>
+
+    <div class="intro-stars">
+        <span class="s1">✦</span>
+        <span class="s2">✧</span>
+        <span class="s3">✦</span>
+    </div>
+
+    <div class="intro-logo">
+        <small>bem-vindo ao</small>
+        <strong>Fluffify</strong>
+        <em>✦</em>
+    </div>
+
+    <div class="ground"></div>
+
+    <div class="cat">
+        <div class="body"></div>
+
+        <div class="head">
+            <i class="ear l"></i>
+            <i class="ear r"></i>
+            <i class="eye l"></i>
+            <i class="eye r"></i>
+            <i class="nose"></i>
+        </div>
+    </div>
+
+    <div class="intro-message">
+        <small>um mundo cheio de carinho</small>
+
+        <div>
+            encontre seu novo amiguinho
+        </div>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a class="brand" href="index.html">
+            <i class="fa-solid fa-paw"></i>
+            Fluffify
+        </a>
+
+        <nav class="nav">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="caes.html">
+                Cães
+            </a>
+
+            <a href="gatos.html">
+                Gatos
+            </a>
+
+            <a href="aves.html">
+                Aves
+            </a>
+
+            <a href="roedores.html">
+                Roedores
+            </a>
+
+            <a href="todos-os-pets.html">
+                Todos
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+        </nav>
+
+        <div class="header-tools">
+
+            <a class="header-action" href="login.html">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span class="label" data-auth-name="">
+                    Entrar
+                </span>
+
+            </a>
+
+            <a class="header-action" href="carrinho.html">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span class="label">
+                    Carrinho
+                </span>
+
+                <b class="badge cart-badge">
+                    0
+                </b>
+
+            </a>
+
+            <button class="header-action" id="theme" title="Tema">
+                ☾
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     CONTEÚDO PRINCIPAL
+========================================================= -->
+
+<main class="main">
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                mundo dos filhotes · desde 2026
+            </span>
+
+            <h1>
+                Onde a fofura
+                <br/>
+                ganha endereço.
+            </h1>
+
+            <p>
+                Uma experiência fictícia de adoção e descoberta
+                criada para praticar HTML, CSS e JavaScript
+                com um visual editorial, delicado e contemporâneo.
+            </p>
+
+            <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+
+                <a class="btn" href="todos-os-pets.html">
+                    Explorar filhotes
+                </a>
+
+                <button class="btn soft" id="quiz-btn">
+                    Qual pet combina comigo?
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SELEÇÃO DA CASA
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    seleção da casa
+                </span>
+
+                <h2>
+                    Pequenos grandes encontros
+                </h2>
+
+            </div>
+
+            <a class="btn soft" href="todos-os-pets.html">
+                Ver todos
+            </a>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <!-- MEL -->
+
+            <article class="card">
+
+                <img
+                    alt="Gatinho Mel"
+                    class="pet-img"
+                    onerror="imgFallback(this,'Gatinho Mel')"
+                    src="midia/gatos/cat1.jpeg"
+                />
+
+                <div class="card-body">
+
+                    <span class="tag">
+                        Gatos
+                    </span>
+
+                    <h3>
+                        Gatinho Mel
+                    </h3>
+
+                    <div class="muted">
+                        1 mês · Macho
+                    </div>
+
+                    <div class="price">
+                        R$ 350,00
+                    </div>
+
+                    <div class="card-actions">
+
+                        <a
+                            class="btn soft"
+                            href="animais/gato-mel.html">
+                            Detalhes
+                        </a>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('gato-mel')">
+                            Comprar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- RAJADINHO -->
+
+            <article class="card">
+
+                <img
+                    alt="Rajadinho"
+                    class="pet-img"
+                    onerror="imgFallback(this,'Rajadinho')"
+                    src="midia/gatos/cat2.jpeg"
+                />
+
+                <div class="card-body">
+
+                    <span class="tag">
+                        Gatos
+                    </span>
+
+                    <h3>
+                        Rajadinho
+                    </h3>
+
+                    <div class="muted">
+                        2 meses · Macho
+                    </div>
+
+                    <div class="price">
+                        R$ 420,00
+                    </div>
+
+                    <div class="card-actions">
+
+                        <a
+                            class="btn soft"
+                            href="animais/gato-rajadinho.html">
+                            Detalhes
+                        </a>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('gato-rajadinho')">
+                            Comprar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- FRAJOLINHA -->
+
+            <article class="card">
+
+                <img
+                    alt="Frajolinha"
+                    class="pet-img"
+                    onerror="imgFallback(this,'Frajolinha')"
+                    src="midia/gatos/cat3.jpeg"
+                />
+
+                <div class="card-body">
+
+                    <span class="tag">
+                        Gatos
+                    </span>
+
+                    <h3>
+                        Frajolinha
+                    </h3>
+
+                    <div class="muted">
+                        2 meses · Fêmea
+                    </div>
+
+                    <div class="price">
+                        R$ 390,00
+                    </div>
+
+                    <div class="card-actions">
+
+                        <a
+                            class="btn soft"
+                            href="animais/gato-frajolinha.html">
+                            Detalhes
+                        </a>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('gato-frajolinha')">
+                            Comprar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CINZINHA -->
+
+            <article class="card">
+
+                <img
+                    alt="Cinzinha"
+                    class="pet-img"
+                    onerror="imgFallback(this,'Cinzinha')"
+                    src="midia/gatos/cat4.jpeg"
+                />
+
+                <div class="card-body">
+
+                    <span class="tag">
+                        Gatos
+                    </span>
+
+                    <h3>
+                        Cinzinha
+                    </h3>
+
+                    <div class="muted">
+                        3 meses · Fêmea
+                    </div>
+
+                    <div class="price">
+                        R$ 450,00
+                    </div>
+
+                    <div class="card-actions">
+
+                        <a
+                            class="btn soft"
+                            href="animais/gato-cinzinha.html">
+                            Detalhes
+                        </a>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('gato-cinzinha')">
+                            Comprar
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CARROSSEL PRINCIPAL
+         APENAS UM CARROSSEL
+    ===================================================== -->
+
+    <section class="ff-home-carrossel">
+
+        <div class="home-banner-section">
+
+            <div class="banner-heading">
+
+                <span class="eyebrow">
+                    explore o universo Fluffify
+                </span>
+
+                <h2>
+                    Tem sempre um amiguinho esperando por você
+                </h2>
+
+                <p>
+                    Descubra nossos filhotes, conheça cada categoria
+                    e encontre aquele que mais combina com você.
+                </p>
+
+            </div>
+
+
+            <div class="banner-container">
+
+                <div class="carrossel-slides">
+
+
+                    <a
+                        href="index.html"
+                        class="clickable-banner-slide ativo">
+
+                        <img
+                            src="midia/banner/banner1.jpeg"
+                            alt="Banner principal Fluffify"
+                        />
+
+                    </a>
+
+
+                    <a
+                        href="gatos.html"
+                        class="clickable-banner-slide">
+
+                        <img
+                            src="midia/banner/gatos.jpeg"
+                            alt="Gatos"
+                        />
+
+                    </a>
+
+
+                    <a
+                        href="caes.html"
+                        class="clickable-banner-slide">
+
+                        <img
+                            src="midia/banner/caes.jpeg"
+                            alt="Cães"
+                        />
+
+                    </a>
+
+
+                    <a
+                        href="aves.html"
+                        class="clickable-banner-slide">
+
+                        <img
+                            src="midia/banner/aves.jpeg"
+                            alt="Aves"
+                        />
+
+                    </a>
+
+
+                    <a
+                        href="roedores.html"
+                        class="clickable-banner-slide">
+
+                        <img
+                            src="midia/banner/roedores.jpeg"
+                            alt="Roedores"
+                        />
+
+                    </a>
+
+                </div>
+
+
+                <button
+                    class="carousel-btn prev"
+                    aria-label="Banner anterior"
+                    type="button">
+                    ❮
+                </button>
+
+
+                <button
+                    class="carousel-btn next"
+                    aria-label="Próximo banner"
+                    type="button">
+                    ❯
+                </button>
+
+
+                <div
+                    class="carousel-dots"
+                    aria-label="Navegação dos banners">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CURIOSIDADES
+    ===================================================== -->
+
+    <section class="section home-secao">
+
+        <div class="section-head">
+
+            <div>
+
+                <span class="eyebrow">
+                    pequenas descobertas
+                </span>
+
+                <h2>
+                    Você sabia?
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+
+                <h3>
+                    Gatos dorminhocos
+                </h3>
+
+                <p>
+                    Gatos adultos costumam dormir muitas horas
+                    durante o dia, enquanto filhotes precisam
+                    ainda mais descanso.
+                </p>
+
+            </article>
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-dog"></i>
+                </div>
+
+                <h3>
+                    O olfato dos cães
+                </h3>
+
+                <p>
+                    O olfato dos cães é extremamente desenvolvido
+                    e é uma das formas mais importantes que eles
+                    usam para explorar o mundo.
+                </p>
+
+            </article>
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+
+                <h3>
+                    Dentes dos roedores
+                </h3>
+
+                <p>
+                    Coelhos e muitos roedores precisam roer
+                    regularmente porque seus dentes continuam
+                    crescendo.
+                </p>
+
+            </article>
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+
+                <h3>
+                    Aves comunicativas
+                </h3>
+
+                <p>
+                    Algumas aves conseguem imitar sons e até
+                    palavras que escutam com frequência.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ANÚNCIO VETERINÁRIO
+    ===================================================== -->
+
+    <section class="ff-home-anuncio">
+
+        <span>
+            anúncio fictício
+        </span>
+
+        <div class="ff-anuncio-icon">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                Clínica Vet Amigo
+            </h3>
+
+            <p>
+                Primeira consulta com
+                <strong>20% de desconto</strong>
+                para clientes Fluffify.
+            </p>
+
+        </div>
+
+        <button class="btn">
+            Agendar consulta
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         CUIDADOS
+    ===================================================== -->
+
+    <section class="section home-secao">
+
+        <span class="eyebrow">
+            antes de levar um pet
+        </span>
+
+        <h2>
+            Cuidados essenciais
+        </h2>
+
+        <p class="home-sub">
+            Pequenos cuidados fazem uma enorme diferença.
+        </p>
+
+
+        <div class="grid">
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-bowl-food"></i>
+                </div>
+
+                <h3>
+                    Alimentação
+                </h3>
+
+                <p>
+                    Alimentação adequada à idade, porte e
+                    necessidades do animal.
+                </p>
+
+            </article>
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-syringe"></i>
+                </div>
+
+                <h3>
+                    Vacinas
+                </h3>
+
+                <p>
+                    Mantenha vacinação e acompanhamento
+                    veterinário em dia.
+                </p>
+
+            </article>
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <h3>
+                    Carinho
+                </h3>
+
+                <p>
+                    Brincadeiras, interação e atenção ajudam
+                    a criar vínculo.
+                </p>
+
+            </article>
+
+
+            <article class="card home-info-card">
+
+                <div class="home-icone">
+                    <i class="fa-solid fa-broom"></i>
+                </div>
+
+                <h3>
+                    Ambiente
+                </h3>
+
+                <p>
+                    Um espaço seguro, limpo e confortável
+                    também faz parte do cuidado.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         POR QUE FLUFFIFY
+    ===================================================== -->
+
+    <section class="ff-sobre-home">
+
+        <div>
+
+            <span class="eyebrow">
+                nossa proposta
+            </span>
+
+            <h2>
+                Por que a
+                Fluffify?
+            </h2>
+
+            <p>
+                A Fluffify nasceu como um projeto acadêmico
+                para transformar uma loja fictícia em uma
+                experiência web completa.
+            </p>
+
+        </div>
+
+
+        <div class="ff-sobre-itens">
+
+
+            <div>
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <strong>
+                    Saúde em primeiro lugar
+                </strong>
+
+                <span>
+                    Informações organizadas de cada pet.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-hand-holding-heart"></i>
+
+                <strong>
+                    Adoção responsável
+                </strong>
+
+                <span>
+                    Uma experiência pensada para conhecer antes de escolher.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <strong>
+                    Entrega simulada
+                </strong>
+
+                <span>
+                    Frete calculado pelo CEP.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <i class="fa-solid fa-headset"></i>
+
+                <strong>
+                    Suporte
+                </strong>
+
+                <span>
+                    Contato e atendimento fictícios.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMO ADOTAR
+    ===================================================== -->
+
+    <section class="section home-secao">
+
+        <span class="eyebrow">
+            simples assim
+        </span>
+
+        <h2>
+            Como funciona?
+        </h2>
+
+
+        <div class="grid">
+
+
+            <article class="card home-passo">
+
+                <div class="home-icone">
+                    01
+                </div>
+
+                <h3>
+                    Escolha
+                </h3>
+
+                <p>
+                    Explore as categorias e conheça os filhotes.
+                </p>
+
+            </article>
+
+
+            <article class="card home-passo">
+
+                <div class="home-icone">
+                    02
+                </div>
+
+                <h3>
+                    Adicione
+                </h3>
+
+                <p>
+                    Coloque seu escolhido no carrinho.
+                </p>
+
+            </article>
+
+
+            <article class="card home-passo">
+
+                <div class="home-icone">
+                    03
+                </div>
+
+                <h3>
+                    Simule
+                </h3>
+
+                <p>
+                    Use cupom, calcule o frete e finalize a simulação.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ANÚNCIO RAÇÃO
+    ===================================================== -->
+
+    <section class="ff-home-anuncio invertido">
+
+        <span>
+            anúncio fictício
+        </span>
+
+        <div class="ff-anuncio-icon">
+
+            <i class="fa-solid fa-bone"></i>
+
+        </div>
+
+        <div>
+
+            <h3>
+                PremiumPet Filhotes
+            </h3>
+
+            <p>
+                Use o cupom
+                <strong>FLUFFY10</strong>
+                e ganhe 10% de desconto.
+            </p>
+
+        </div>
+
+        <a
+            href="carrinho.html"
+            class="btn soft">
+            Ver ofertas
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         AVALIAÇÕES
+    ===================================================== -->
+
+    <section class="section home-secao">
+
+        <span class="eyebrow">
+            experiências fictícias
+        </span>
+
+        <h2>
+            Quem adotou, aprovou
+        </h2>
+
+
+        <div class="grid">
+
+
+            <article class="card avaliacao-card">
+
+                <div class="home-estrelas">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “O Mel chegou saudável e já se sente em casa.
+                    Atendimento super atencioso!”
+                </p>
+
+                <strong>
+                    Mariana S. · São Paulo
+                </strong>
+
+            </article>
+
+
+            <article class="card avaliacao-card">
+
+                <div class="home-estrelas">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Processo simples e transparente.
+                    Meus filhos amaram o novo integrante.”
+                </p>
+
+                <strong>
+                    Carlos R. · Campinas
+                </strong>
+
+            </article>
+
+
+            <article class="card avaliacao-card">
+
+                <div class="home-estrelas">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Recebi todas as informações de vacina
+                    e cuidados. Recomendo!”
+                </p>
+
+                <strong>
+                    Beatriz L. · Santos
+                </strong>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ===================================================== -->
+
+    <section class="section home-secao">
+
+        <span class="eyebrow">
+            dúvidas frequentes
+        </span>
+
+        <h2>
+            Perguntas frequentes
+        </h2>
+
+
+        <div class="home-faq">
+
+
+            <details>
+
+                <summary>
+                    Os filhotes já vêm vacinados?
+                </summary>
+
+                <p>
+                    Cada página de animal informa os dados
+                    fictícios de vacinação e cuidados.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Como funciona o frete?
+                </summary>
+
+                <p>
+                    Digite seu CEP no carrinho para simular
+                    o valor e o prazo de entrega.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Posso usar cupom?
+                </summary>
+
+                <p>
+                    Sim. Experimente o código
+                    <strong>FLUFFY10</strong>.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Posso fazer um pedido de verdade?
+                </summary>
+
+                <p>
+                    Não. O Fluffify é totalmente fictício e
+                    todas as compras são apenas simulações.
+                </p>
+
+            </details>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BANNER FINAL
+         (sempre por último dentro da <main>: classe ff-banner-final)
+    ===================================================== -->
+
+    <section class="section ff-banner-final">
+
+        <div class="banner">
+
+            <span class="eyebrow">
+                feito para aprender
+            </span>
+
+            <h1>
+                Design bonito também pode ser organizado.
+            </h1>
+
+            <p>
+                O novo Fluffify separa conteúdo, dados, estilos
+                e comportamento para que você consiga evoluir
+                o projeto sem precisar editar a mesma coisa
+                em dezenas de páginas.
+            </p>
+
+            <a
+                class="btn"
+                href="todos-os-pets.html">
+                Conhecer o catálogo
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            <h3>
+                Fluffify
+            </h3>
+
+            <p>
+                Um projeto acadêmico criado para transformar
+                uma loja fictícia de filhotes em uma experiência
+                web acolhedora, elegante e interativa.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Navegação
+            </h4>
+
+            <a href="caes.html">
+                Cães
+            </a>
+
+            <a href="gatos.html">
+                Gatos
+            </a>
+
+            <a href="aves.html">
+                Aves
+            </a>
+
+            <a href="roedores.html">
+                Roedores
+            </a>
+
+            <a href="todos-os-pets.html">
+                Todos os filhotes
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Atendimento fictício
+            </h4>
+
+            <a href="contato.html">
+                Fale conosco
+            </a>
+
+            <a href="termos-de-uso.html">
+                Termos
+            </a>
+
+            <a href="politica-de-privacidade.html">
+                Privacidade
+            </a>
+
+            <p>
+                Instagram: @fluffify
+                <br/>
+                WhatsApp: (11) 99999-9999
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        &copy; 2026 Fluffify · Projeto acadêmico ·
+        Todas as compras e cadastros são simulados.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     ELEMENTOS GLOBAIS
+========================================================= -->
+
+<div class="toast"></div>
+
+
+<div class="modal" id="modal">
+
+    <div
+        class="modal-card"
+        id="modal-body">
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="dados.js"></script>
+<script src="script.js"></script>
+<script src="intro.js"></script>
+<script src="patinhas.js"></script>
+<script src="carrossel.js"></script>
+
+</body>
+</html>
