@@ -4,6 +4,13 @@
 
 **Live demo:** [Part 1](https://giuliasamogin.github.io/Fluffify/Parte-1/) · [Part 2](https://giuliasamogin.github.io/Fluffify/Parte-2/)
 
+## Preview
+
+| Part 1 | Part 2 |
+| --- | --- |
+| ![Fluffify Part 1 home page](screenshots/parte1.png) | ![Fluffify Part 2 home page](screenshots/parte2.png) |
+| *The first version: a playful experiment.* | *The second version: a more commercial look.* |
+
 ## About the project
 
 Fluffify is a multi-page pet shop website created during the HTML and CSS course at Fundação Bradesco. It is the **first project I ever built**, so I decided to keep both versions online to show how my work evolved.
